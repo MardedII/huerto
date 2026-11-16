@@ -17,6 +17,9 @@ interface ConsultasHuerto {
     @Delete
     suspend fun eliminarParcela(parcela: ParcelaHuerto)
 
+    @Delete
+    suspend fun quitarParcela(parcela: ParcelaHuerto)
+
     @Query("SELECT * FROM plantaciones")
     fun observarSiembras(): Flow<List<SiembraHuerto>>
 
@@ -29,6 +32,9 @@ interface ConsultasHuerto {
     @Delete
     suspend fun eliminarSiembra(siembra: SiembraHuerto)
 
+    @Delete
+    suspend fun quitarSiembra(siembra: SiembraHuerto)
+
     @Query("SELECT * FROM actividades_huerto")
     fun observarLabores(): Flow<List<LaborHuerto>>
 
@@ -40,4 +46,7 @@ interface ConsultasHuerto {
 
     @Delete
     suspend fun eliminarLabor(labor: LaborHuerto)
+
+    @Delete
+    suspend fun quitarLabor(labor: LaborHuerto)
 }
